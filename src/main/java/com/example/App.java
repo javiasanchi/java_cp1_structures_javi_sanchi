@@ -1,8 +1,9 @@
 package com.example;
 
+import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
+
 
 public class App {
     public static void main(String[] args) {
@@ -60,15 +61,57 @@ public class App {
             String language = scanner.next();
             System.out.println("Introduce el precio del libro :");
             Double price = scanner.nextDouble();
-            System.out.println("Indica fecha de publicación :");
+            System.out.println("Indica el año de publicación del libro :");
+            int yearPublication = scanner.nextInt();
 
+            Book book;
+            book = new Book(null, title, synopsis, numPages, isbn, language, available, price, publicDate );
+            Book createBook = bookService.create(book);
+            System.out.println("El libro creado se guardo con el Id :" + createBook.getId());            
+        } else if (option == 5) {
+            System.out.println("Indica el Id del libro a editar :");
+            Long bookId = scanner.nextLong();
+            Book book = bookService.findById(bookId);
+            System.out.println("Actualmente esta es la información del libro " + bookId);
+            System.out.println(book);
+            System.out.println("Cambia el título del libro :");
+            String title = scanner.next();
+            scanner.nextLine();
+            System.out.println("Cambia la nueva sinopsis del libro :");
+            String synopsis = scanner.next();
+            System.out.println("Modifica el número de páginas del libro :");
+            int numPages = scanner.nextInt();
+            System.out.println("Indica si el libro está disponible :");
+            Boolean present = scanner.nextBoolean();
+            System.out.println("Indica el precio del libro :");
+            Double price = scanner.nextDouble();
+            System.out.println("Indica año de publicación del libro :");
+            int publicYear = scanner.nextInt();
 
+            book.setTitle(title);
+            book.setSynopsis(synopsis);
+            book.setNumPages(numPages);
+            book.setAvailable(available);
+            book.setPrice(price);
+            book.setPublicDate(publicDate);
 
+            Book bookedit = bookService.edit(book);
 
-
-
-            
+            if (bookedit == null)
+                System.out.println("El libro no fue actualizado : ");
+            else
+                System.out.println("Libro actualizado " + bookedit);
+        } else if (option == 6) {
+            System.out.println("¿Qué libro por Id quieres borrar? :");
+            Long bookId = scanner.nextLong();
+            boolean isremoved = bookService.removedById(bookId);
+            if (isremoved)
+                System.out.println("Libro borrado correctamente " + bookId);
+            else
+                System.out.println("No se pudo borrar el pibro :" + bookId);
         }
+        scanner.close();
+        System.out.println("Se terminó el librerio ");
 
     }
 }
