@@ -8,7 +8,7 @@ public interface BookService {
     // CRUD
 
     List<Book> findAll();
-    Optional<Book> findById ();
+    Book findById ();
     List<Book> findByMaxPages ();
     List<Book> findByLanguage();
     // Crear
@@ -23,4 +23,5 @@ public interface BookService {
 
     boolean removedById (Long id);
 
+    Book findById(long bookId);
 }
