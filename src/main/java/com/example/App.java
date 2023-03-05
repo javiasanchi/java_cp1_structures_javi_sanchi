@@ -32,11 +32,42 @@ public class App {
             long bookId = scanner.nextLong();
             Book book = bookService.findById(bookId);
 
-            if (book== null) {
+            if (book== null)
                 System.out.println("El libro con id : " + bookId + " no existe");
-            }
+                    else
+                System.out.println(book);
+
+        } else if (option == 3) {
+            System.out.println("Indica el número máximo de páginas :");
+            int maxPages =scanner.nextInt();
+            List<Book> books =bookService.findByMaxPages(maxPages);
+            for (Book book : books)
+                System.out.println(book);
+            if (books.size() <=0 || books.size()>=(maxPages))
+            System.out.println("El libro elegido está fuera de rango de páginas " + maxPages);
+
+        } else if (option == 4) {
+            System.out.println("Indica el título del libro :");
+            String title = scanner.next();
+            scanner.nextLine();
+            System.out.println("Añade una sinopsis del libro ");
+            String synopsis = scanner.next();
+            System.out.println("Indica el número de páginas del libro :");
+            int numPages =scanner.nextInt();
+            System.out.println("Indica el isbn del libro :");
+            String isbn = scanner.next();
+            System.out.println("Indica el idioma  del libro :");
+            String language = scanner.next();
+            System.out.println("Introduce el precio del libro :");
+            Double price = scanner.nextDouble();
+            System.out.println("Indica fecha de publicación :");
 
 
+
+
+
+
+            
         }
 
     }

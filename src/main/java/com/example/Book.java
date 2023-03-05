@@ -14,13 +14,13 @@ public class Book {
     private Boolean available;
     private Double price;
     private LocalDate publicDate;
-    private LocalDate finalSale;
+
 
     // constructores Book
 
     public Book (){}
 
-    public Book(Long id, String title, String synopsis, Integer numPages, String isbn, String language, Boolean available, Double price, LocalDate publicDate, LocalDate finalSale) {
+    public Book(Long id, String title, String synopsis, Integer numPages, String isbn, String language, Boolean available, Double price, LocalDate publicDate) {
         this.id = id;
         this.title = title;
         this.synopsis = synopsis;
@@ -30,7 +30,7 @@ public class Book {
         this.available = available;
         this.price = price;
         this.publicDate = publicDate;
-        this.finalSale = finalSale;
+
     }
 
     public Long getId() {
@@ -105,13 +105,7 @@ public class Book {
         this.publicDate = publicDate;
     }
 
-    public LocalDate getFinalSale() {
-        return finalSale;
-    }
 
-    public void setFinalSale(LocalDate finalSale) {
-        this.finalSale = finalSale;
-    }
 
     @Override
     public String toString() {
@@ -125,7 +119,6 @@ public class Book {
                 ", available=" + available +
                 ", price=" + price +
                 ", publicDate=" + publicDate +
-                ", finalSale=" + finalSale +
                 '}';
     }
 }
