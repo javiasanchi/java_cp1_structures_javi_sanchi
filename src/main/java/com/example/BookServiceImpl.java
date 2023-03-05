@@ -1,9 +1,13 @@
 package com.example;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class BookServiceImpl implements BookService {
+
+    private List<Book> bookdata= new ArrayList<>();
+
     @Override
     public List<Book> findAll() {
         return null;
@@ -16,6 +20,11 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> findByMaxPages() {
+        return null;
+    }
+
+    @Override
+    public List<Book> findByLanguage() {
         return null;
     }
 

@@ -10,7 +10,7 @@ public interface BookService {
     List<Book> findAll();
     Optional<Book> findById ();
     List<Book> findByMaxPages ();
-
+    List<Book> findByLanguage();
     // Crear
 
     Book create (Book book);
