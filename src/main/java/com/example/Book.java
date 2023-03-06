@@ -13,14 +13,14 @@ public class Book {
     private String language;
     private Boolean available;
     private Double price;
-    private LocalDate publicDate;
+    private int publicYear;
 
 
     // constructores Book
 
     public Book (){}
 
-    public Book(Long id, String title, String synopsis, Integer numPages, String isbn, String language, Boolean available, Double price, LocalDate publicDate) {
+    public Book(Long id, String title, String synopsis, Integer numPages, String isbn, String language, Boolean available, Double price, int publicYear) {
         this.id = id;
         this.title = title;
         this.synopsis = synopsis;
@@ -29,7 +29,7 @@ public class Book {
         this.language = language;
         this.available = available;
         this.price = price;
-        this.publicDate = publicDate;
+        this.publicYear = publicYear;
 
     }
 
@@ -97,12 +97,12 @@ public class Book {
         this.price = price;
     }
 
-    public LocalDate getPublicDate() {
-        return publicDate;
+    public int getPublicYear(int publicYear) {
+        return this.publicYear;
     }
 
     public void setPublicDate(LocalDate publicDate) {
-        this.publicDate = publicDate;
+        this.publicYear = publicYear;
     }
 
 
@@ -118,7 +118,7 @@ public class Book {
                 ", language='" + language + '\'' +
                 ", available=" + available +
                 ", price=" + price +
-                ", publicDate=" + publicDate +
+                ", publicYear=" + publicYear +
                 '}';
     }
 }

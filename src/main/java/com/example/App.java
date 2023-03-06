@@ -59,10 +59,12 @@ public class App {
             String isbn = scanner.next();
             System.out.println("Indica el idioma  del libro :");
             String language = scanner.next();
+            System.out.println("Indica si el libro está disponible :");
+            Boolean available = scanner.nextBoolean();
             System.out.println("Introduce el precio del libro :");
             Double price = scanner.nextDouble();
-            System.out.println("Indica el año de publicación del libro :");
-            int yearPublication = scanner.nextInt();
+            System.out.println("Indica la fecha de la publicación del libro :");
+            int publicYear = scanner.nextInt();
 
             Book book;
             book = new Book(null, title, synopsis, numPages, isbn, language, available, price, publicDate );
@@ -93,7 +95,7 @@ public class App {
             book.setNumPages(numPages);
             book.setAvailable(available);
             book.setPrice(price);
-            book.setPublicDate(publicDate);
+            book.getPublicYear(publicYear);
 
             Book bookedit = bookService.edit(book);
 
