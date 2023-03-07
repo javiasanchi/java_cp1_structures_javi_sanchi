@@ -13,14 +13,15 @@ public class Book {
     private String language;
     private Boolean available;
     private Double price;
-    private int publicYear;
+    private LocalDate publicDate;
+    private TypeBook typeBook;
 
 
     // constructores Book
 
     public Book (){}
 
-    public Book(Long id, String title, String synopsis, Integer numPages, String isbn, String language, Boolean available, Double price, int publicYear) {
+    public Book(Long id, String title, String synopsis, Integer numPages, String isbn, String language, Boolean available, Double price, LocalDate publicDate) {
         this.id = id;
         this.title = title;
         this.synopsis = synopsis;
@@ -29,7 +30,8 @@ public class Book {
         this.language = language;
         this.available = available;
         this.price = price;
-        this.publicYear = publicYear;
+        this.publicDate = publicDate;
+        this.typeBook = typeBook;
 
     }
 
@@ -97,15 +99,21 @@ public class Book {
         this.price = price;
     }
 
-    public int getPublicYear(int publicYear) {
-        return this.publicYear;
+    public LocalDate getPublicDate(LocalDate publicDate) {
+        return this.publicDate;
     }
 
     public void setPublicDate(LocalDate publicDate) {
-        this.publicYear = publicYear;
+        this.publicDate = publicDate;
     }
 
+    public TypeBook getTypeBook() {
+        return typeBook;
+    }
 
+    public void setTypeBook(TypeBook typeBook) {
+        this.typeBook = typeBook;
+    }
 
     @Override
     public String toString() {
@@ -118,7 +126,8 @@ public class Book {
                 ", language='" + language + '\'' +
                 ", available=" + available +
                 ", price=" + price +
-                ", publicYear=" + publicYear +
+                ", publicDate=" + publicDate +
+                ", typeBook=" + typeBook +
                 '}';
     }
 }

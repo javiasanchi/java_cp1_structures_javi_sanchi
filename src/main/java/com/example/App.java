@@ -1,6 +1,7 @@
 package com.example;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.List;
 import java.util.Scanner;
 
@@ -63,16 +64,21 @@ public class App {
             Boolean available = scanner.nextBoolean();
             System.out.println("Introduce el precio del libro :");
             Double price = scanner.nextDouble();
-            System.out.println("Indica la fecha de la publicación del libro :");
-            int publicYear = scanner.nextInt();
+            System.out.println("Indica el año de la publicación del libro :");
+            int year = scanner.nextInt();
+            System.out.println("Indica mes de publicación del libro :");
+            int month = scanner.nextInt();
+            System.out.println("Indica día de publicación del libro :");
+            int day = scanner.nextInt();
+            LocalDate publicDate = LocalDate.of(month,day,year);
 
             Book book;
-            book = new Book(null, title, synopsis, numPages, isbn, language, available, price, publicDate );
+            book = new Book(null, title, synopsis, numPages, isbn, language, available, price, publicDate);
             Book createBook = bookService.create(book);
             System.out.println("El libro creado se guardo con el Id :" + createBook.getId());            
         } else if (option == 5) {
             System.out.println("Indica el Id del libro a editar :");
-            Long bookId = scanner.nextLong();
+            long bookId = scanner.nextLong();
             Book book = bookService.findById(bookId);
             System.out.println("Actualmente esta es la información del libro " + bookId);
             System.out.println(book);
@@ -84,18 +90,23 @@ public class App {
             System.out.println("Modifica el número de páginas del libro :");
             int numPages = scanner.nextInt();
             System.out.println("Indica si el libro está disponible :");
-            Boolean present = scanner.nextBoolean();
+            Boolean available = scanner.nextBoolean();
             System.out.println("Indica el precio del libro :");
             Double price = scanner.nextDouble();
             System.out.println("Indica año de publicación del libro :");
-            int publicYear = scanner.nextInt();
+            int year = scanner.nextInt();
+            System.out.println("Indica mes de publicación del libro :");
+            int month = scanner.nextInt();
+            System.out.println("Indica día de publicación del libro :");
+            int day = scanner.nextInt();
+            LocalDate publicDate = LocalDate.of(month,day,year);
 
             book.setTitle(title);
             book.setSynopsis(synopsis);
             book.setNumPages(numPages);
             book.setAvailable(available);
             book.setPrice(price);
-            book.getPublicYear(publicYear);
+            book.setPublicDate(publicDate);
 
             Book bookedit = bookService.edit(book);
 
