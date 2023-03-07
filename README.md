@@ -8,3 +8,4 @@ Formato de creación de proyecto siguiendo indicaciones caso práctico
 3. Creo constructores, getters, setter y toString con Generate de las clases
 4. Creo BookService y añado los métodos findAll(), findById(), findByMaxPages()
 5. Implemento BookService
+6. Acabo la consola de funcionalidad
