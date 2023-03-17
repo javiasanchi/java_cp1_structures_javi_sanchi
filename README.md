@@ -1,4 +1,5 @@
 # java_cp1_structures_javi_sanchi
+Proyecto sin terminar por errores pendientes de revisión
 Caso práctico 1 - Aplicación consola Java SE y estructuras de datos
 Este proyecto voy a intentar crearlo lo más independiente del ejemplo
 El objetivo que tengo es comprender la funcionalidad del programa y como se vinculan las diferentes partes
